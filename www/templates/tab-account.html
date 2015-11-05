@@ -1,0 +1,52 @@
+<ion-view view-title="Account">
+  <ion-content>
+    <div class="list" ng-if="user.attid===undefined">
+
+      <form name="myForm">
+        <label class="item item-input">
+          <input type="text" placeholder="ATTID" autocapitalize="none" name="input" ng-model="attid.text" ng-pattern="attid.word" required ng-trim="false">
+        </label>
+        <div role="alert">
+          <span class="error" ng-show="myForm.input.$error.required">
+      Required!</span>
+          <span class="error" ng-show="myForm.input.$error.pattern">
+      Single word only!</span>
+        </div>
+
+        <button class="button button-full button-positive" ng-click="find()">
+          Find
+        </button>
+      </form>
+    </div>
+    <div class="list card" ng-if="user.attid!==undefined">
+      <div class="item item-avatar">
+        <img src="img/default-avatar.png">
+        <h2>{{user.attid}}</h2>
+        <p>{{date | date:'yyyy-MM-dd'}}</p>
+      </div>
+
+      <div class="item item-body">
+        <!--p>
+          
+        </p>
+        <p>
+          <a href="#" class="subdued">1 Like</a>
+          <a href="#" class="subdued">5 Comments</a>
+        </p>
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left">
+        <a class="tab-item" href="#">
+          <i class="icon ion-thumbsup"></i> Like
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-chatbox"></i> Comment
+        </a>
+        <a class="tab-item" href="#">
+          <i class="icon ion-share"></i> Share
+        </a-->
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
